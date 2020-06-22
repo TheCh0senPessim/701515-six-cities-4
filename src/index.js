@@ -6,7 +6,15 @@ const Settings = {
   OFFERS_AMOUNT: 312
 };
 
+const offers = [
+  {title: `Beautiful & luxurious apartment at great location`},
+  {title: `Wood and stone place`},
+  {title: `Canal View Prinsengracht`},
+  {title: `Nice, cozy, warm big bed apartment`},
+  {title: `Wood and stone place`}
+];
+
 ReactDOM.render(
-    <App offersAmount={Settings.OFFERS_AMOUNT} />,
+    <App offersAmount={Settings.OFFERS_AMOUNT} offers={offers} />,
     document.querySelector(`#root`)
 );
