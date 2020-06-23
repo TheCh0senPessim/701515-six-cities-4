@@ -17,7 +17,7 @@ const offers = [
 it(`Should Main render correctly`, () => {
   const tree = renderer
     .create(<Main
-      offersAmount={Settings.OFFERS_AMOUNT} offers={offers}
+      offersAmount={Settings.OFFERS_AMOUNT} offers={offers} onCardTitleClick={() => {}}
     />)
     .toJSON();
 
