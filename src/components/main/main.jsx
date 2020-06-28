@@ -104,7 +104,11 @@ Main.propTypes = {
   offersAmount: PropTypes.number.isRequired,
   offers: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        rating: PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired
       })
   ).isRequired,
   onCardTitleClick: PropTypes.func.isRequired
