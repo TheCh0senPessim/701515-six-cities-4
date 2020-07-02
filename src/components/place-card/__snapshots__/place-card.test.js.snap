@@ -3,6 +3,7 @@
 exports[`PlaceCard is rendered correctly 1`] = `
 <article
   className="cities__place-card place-card"
+  onMouseEnter={[Function]}
 >
   <div
     className="place-card__mark"
@@ -38,7 +39,8 @@ exports[`PlaceCard is rendered correctly 1`] = `
         <b
           className="place-card__price-value"
         >
-          €120
+          €
+          150
         </b>
         <span
           className="place-card__price-text"
@@ -73,7 +75,11 @@ exports[`PlaceCard is rendered correctly 1`] = `
         className="place-card__stars rating__stars"
       >
         <span
-          style="width: 80%"
+          style={
+            Object {
+              "width": "99%",
+            }
+          }
         />
         <span
           className="visually-hidden"
@@ -87,14 +93,15 @@ exports[`PlaceCard is rendered correctly 1`] = `
     >
       <a
         href="#"
+        onClick={[Function]}
       >
-        Beautiful & luxurious apartment at great location
+        A place where you could be safe
       </a>
     </h2>
     <p
       className="place-card__type"
     >
-      Apartment
+      bunker
     </p>
   </div>
 </article>

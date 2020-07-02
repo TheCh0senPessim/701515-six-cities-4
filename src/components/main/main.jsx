@@ -104,6 +104,8 @@ Main.propTypes = {
   offersAmount: PropTypes.number.isRequired,
   offers: PropTypes.arrayOf(
       PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        isPremium: PropTypes.bool.isRequired,
         title: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,

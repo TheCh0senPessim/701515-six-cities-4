@@ -18,6 +18,7 @@ class PlacesList extends React.Component {
       <div className="cities__places-list places__list tabs__content">
         {this.props.offers.map((offer, i) => (
           <PlaceCard
+            id={offer.id}
             offer={offer}
             key={offer.title + i}
             onCardTitleClick={this.props.onCardTitleClick}
@@ -32,6 +33,8 @@ class PlacesList extends React.Component {
 PlacesList.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        isPremium: PropTypes.bool.isRequired,
         title: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,

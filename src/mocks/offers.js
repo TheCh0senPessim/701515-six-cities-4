@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    premium: false,
+    isPremium: true,
     title: `Simple Apartment`,
     type: `Apartment`,
     price: 130,
@@ -9,7 +9,7 @@ export default [
     img: `img/apartment-01.jpg`
   }, {
     id: 2,
-    premium: true,
+    isPremium: true,
     title: `Loft for hipsters`,
     type: `Loft`,
     price: 200,
@@ -17,7 +17,7 @@ export default [
     img: `img/apartment-01.jpg`
   }, {
     id: 3,
-    premium: true,
+    isPremium: true,
     title: `Warehouse for squatters`,
     type: `Warehouse`,
     price: 10,
@@ -25,7 +25,7 @@ export default [
     img: `img/apartment-01.jpg`
   }, {
     id: 4,
-    premium: false,
+    isPremium: true,
     title: `Dark basement`,
     type: `Basement`,
     price: 40,

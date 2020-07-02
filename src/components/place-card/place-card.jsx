@@ -12,13 +12,14 @@ class PlaceCard extends React.PureComponent {
   }
 
   render() {
-    const {title, type, price, rating, img, premium} = this.props.offer;
+    const {title, type, price, rating, img, isPremium} = this.props.offer;
     return (
       <article className="cities__place-card place-card" onMouseEnter={this.handleChange}>
-        {premium &&
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>}
+        {isPremium && (
+          <div className="place-card__mark">
+            <span>Premium</span>
+          </div>
+        )}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
             <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
@@ -58,7 +59,7 @@ PlaceCard.propTypes = {
   onMouseEnter: PropTypes.func.isRequired,
   offer: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    premium: PropTypes.bool.isRequired,
+    isPremium: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
