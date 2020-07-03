@@ -1,7 +1,6 @@
 import React from 'react';
-import Enzyme, {mount} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import Main from './main.jsx';
+import renderer from 'react-test-renderer';
+import PlacesList from './places-list.jsx';
 
 const offers = [
   {
@@ -39,28 +38,13 @@ const offers = [
   }
 ];
 
-Enzyme.configure({
-  adapter: new Adapter()
-});
+it(`PlacesList is rendered correctly`, () => {
+  const tree = renderer
+  .create(<PlacesList
+    onCardTitleClick={() => {}}
+    offers={offers}
+  />)
+  .toJSON();
 
-describe(`MainComponent`, () => {
-  it(`Should card title be clicked`, () => {
-    const onCardTitleClick = jest.fn();
-
-    const main = mount(
-        <Main
-          offersAmount={312}
-          offers={offers}
-          onCardTitleClick={onCardTitleClick}
-        />
-    );
-
-    const cardTitle = main.find(`.place-card__name a`);
-
-    cardTitle.forEach((node) => {
-      node.simulate(`click`);
-    });
-
-    expect(onCardTitleClick).toHaveBeenCalledTimes(cardTitle.length);
-  });
+  expect(tree).toMatchSnapshot();
 });
