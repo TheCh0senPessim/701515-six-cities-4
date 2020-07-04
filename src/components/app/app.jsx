@@ -1,6 +1,8 @@
 import React from 'react';
 import Main from '../main/main.jsx';
 import PropTypes from 'prop-types';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import DetailedOffer from '../detailed-offer/detailed-offer.jsx';
 
 const cardTitleHandler = (evt) => {
   evt.preventDefault();
@@ -10,7 +12,16 @@ const App = (props) => {
   const {offersAmount, offers} = props;
 
   return (
-    <Main offersAmount={offersAmount} offers={offers} onCardTitleClick={cardTitleHandler} />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Main offersAmount={offersAmount} offers={offers} onCardTitleClick={cardTitleHandler} />
+        </Route>
+        <Route exact path="/dev-detailed-offer">
+          <DetailedOffer />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
