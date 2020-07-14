@@ -51,7 +51,6 @@ const DetailedOffer = (props) => {
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   {title}
-                  {/* Beautiful &amp; luxurious studio at great location */}
                 </h1>
                 <button className="property__bookmark-button button" type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
@@ -75,7 +74,7 @@ const DetailedOffer = (props) => {
                   {bedrooms} Bedrooms
                 </li>
                 <li className="property__feature property__feature--adults">
-                Max {maxGuests} adults
+                  Max {maxGuests} adults
                 </li>
               </ul>
               <div className="property__price">

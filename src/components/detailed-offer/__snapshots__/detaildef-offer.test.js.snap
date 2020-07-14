@@ -188,7 +188,7 @@ exports[`Should DetailedOffer render correctly 1`] = `
             <span
               className="property__rating-value rating__value"
             >
-              4.8
+              4
             </span>
           </div>
           <ul
@@ -202,12 +202,15 @@ exports[`Should DetailedOffer render correctly 1`] = `
             <li
               className="property__feature property__feature--bedrooms"
             >
-              3 Bedrooms
+              3
+               Bedrooms
             </li>
             <li
               className="property__feature property__feature--adults"
             >
-              Max 4 adults
+              Max 
+              4
+               adults
             </li>
           </ul>
           <div
@@ -216,7 +219,8 @@ exports[`Should DetailedOffer render correctly 1`] = `
             <b
               className="property__price-value"
             >
-              €120
+              €
+              120
             </b>
             <span
               className="property__price-text"
