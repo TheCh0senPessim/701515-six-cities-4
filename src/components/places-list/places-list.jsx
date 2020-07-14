@@ -31,18 +31,36 @@ class PlacesList extends React.Component {
 }
 
 PlacesList.propTypes = {
+  onCardTitleClick: PropTypes.func.isRequired,
   offers: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         isPremium: PropTypes.bool.isRequired,
         title: PropTypes.string.isRequired,
-        img: PropTypes.string.isRequired,
+        features: PropTypes.shape({
+          type: PropTypes.string.isRequired,
+          bedrooms: PropTypes.number.isRequired,
+          maxGuests: PropTypes.number.isRequired
+        }).isRequired,
+        description: PropTypes.arrayOf(
+            PropTypes.string.isRequired
+        ).isRequired,
+        photos: PropTypes.arrayOf(
+            PropTypes.string.isRequired
+        ).isRequired,
         price: PropTypes.number.isRequired,
         rating: PropTypes.number.isRequired,
-        type: PropTypes.string.isRequired
-      })
+        householdList: PropTypes.arrayOf(
+            PropTypes.string.isRequired
+        ).isRequired,
+        host: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          avatar: PropTypes.string.isRequired,
+          isSuper: PropTypes.bool.isRequired
+        }).isRequired
+      }).isRequired
   ).isRequired,
-  onCardTitleClick: PropTypes.func.isRequired
+
 };
 
 export default PlacesList;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class PlaceCard extends React.PureComponent {
   constructor(props) {
@@ -12,7 +13,7 @@ class PlaceCard extends React.PureComponent {
   }
 
   render() {
-    const {title, type, price, rating, img, isPremium} = this.props.offer;
+    const {title, features, price, rating, photos, isPremium} = this.props.offer;
     return (
       <article className="cities__place-card place-card" onMouseEnter={this.handleChange}>
         {isPremium && (
@@ -22,7 +23,7 @@ class PlaceCard extends React.PureComponent {
         )}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
-            <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
+            <img className="place-card__image" src={photos[1]} width="260" height="200" alt="Place image"/>
           </a>
         </div>
         <div className="place-card__info">
@@ -45,9 +46,15 @@ class PlaceCard extends React.PureComponent {
             </div>
           </div>
           <h2 className="place-card__name">
-            <a href="#" onClick={this.props.onCardTitleClick}>{title}</a>
+            <Link
+              to={`/detailed-offer`}
+              onClick={() => {
+                this.props.onCardTitleClick(this.props.offer.id);
+              }}>
+              {title}
+            </Link>
           </h2>
-          <p className="place-card__type">{type}</p>
+          <p className="place-card__type">{features.type}</p>
         </div>
       </article>
     );
@@ -58,13 +65,30 @@ PlaceCard.propTypes = {
   onCardTitleClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
   offer: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     isPremium: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
+    features: PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      bedrooms: PropTypes.number.isRequired,
+      maxGuests: PropTypes.number.isRequired
+    }).isRequired,
+    description: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+    ).isRequired,
+    photos: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+    ).isRequired,
     price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired
+    householdList: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+    ).isRequired,
+    host: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      isSuper: PropTypes.bool.isRequired
+    }).isRequired
   }).isRequired
 };
 
