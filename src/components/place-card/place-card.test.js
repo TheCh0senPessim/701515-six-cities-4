@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import PlaceCard from './place-card.jsx';
+import {BrowserRouter} from "react-router-dom";
 
 const offer = {
   id: `01`,
@@ -46,11 +47,14 @@ const offer = {
 
 it(`PlaceCard is rendered correctly`, () => {
   const tree = renderer
-    .create(<PlaceCard
-      offer={offer}
-      onCardTitleClick={() => {}}
-      onMouseEnter={() => {}}
-    />)
+    .create(
+        <BrowserRouter>
+          <PlaceCard
+            offer={offer}
+            onCardTitleClick={() => {}}
+            onMouseEnter={() => {}}
+          />
+        </BrowserRouter>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

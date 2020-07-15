@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link, Router} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class PlaceCard extends React.PureComponent {
   constructor(props) {
@@ -45,16 +45,17 @@ class PlaceCard extends React.PureComponent {
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
-          <h2 className="place-card__name">
-            <Router>
-              <Link
-                to={`/detailed-offer`}
-                onClick={() => {
-                  this.props.onCardTitleClick(this.props.offer.id);
-                }}>
-                {title}
-              </Link>
-            </Router>
+          <h2 className="place-card__name" onClick={() => this.props.onCardTitleClick(this.props.offer.id)}>
+            <Link
+              to={{
+                pathname: `/detailed-offer`
+              }}
+              // onClick={() => {
+              //   this.props.onCardTitleClick(this.props.offer.id);
+              // }}
+            >
+              {title}
+            </Link>
           </h2>
           <p className="place-card__type">{features.type}</p>
         </div>
