@@ -45,14 +45,11 @@ class PlaceCard extends React.PureComponent {
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
-          <h2 className="place-card__name" onClick={() => this.props.onCardTitleClick(this.props.offer.id)}>
+          <h2 className="place-card__name" onClick={() => this.props.onCardTitleClick(this.props.offer)}>
             <Link
               to={{
                 pathname: `/detailed-offer`
               }}
-              // onClick={() => {
-              //   this.props.onCardTitleClick(this.props.offer.id);
-              // }}
             >
               {title}
             </Link>

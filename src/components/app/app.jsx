@@ -8,13 +8,13 @@ class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      offerToShow: `01`
+      offerToShow: this.props.offers[0]
     };
     this.cardTitleHandler = this.cardTitleHandler.bind(this);
   }
 
-  cardTitleHandler(id) {
-    this.setState({offerToShow: id});
+  cardTitleHandler(selectedOffer) {
+    this.setState({offerToShow: selectedOffer});
   }
 
   render() {
@@ -30,7 +30,7 @@ class App extends React.PureComponent {
             <DetailedOffer offer={offers[0]}/>
           </Route>
           <Route exact path="/detailed-offer">
-            <DetailedOffer offer={offers.find((offer) => offer.id === this.state.offerToShow)} />
+            <DetailedOffer offer={this.state.offerToShow} />
           </Route>
         </Switch>
       </BrowserRouter>
