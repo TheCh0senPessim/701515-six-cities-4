@@ -1,6 +1,6 @@
-export default [{
+export const testOffers = [{
   id: `01`,
-  isPremium: false,
+  isPremium: true,
   title: `Beautiful & luxurious studio at great location`,
   features: {
     type: `Apartment`,
@@ -40,7 +40,7 @@ export default [{
 }, {
   id: `02`,
   isPremium: true,
-  title: `Loft for hipsters`,
+  title: `Beautiful & luxurious studio at great location`,
   features: {
     type: `Apartment`,
     bedrooms: 3,
@@ -72,25 +72,25 @@ export default [{
     `Cabel TV`,
     `Fridge`],
   host: {
-    name: `Some guy`,
+    name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
   }
 }, {
   id: `03`,
   isPremium: true,
-  title: `Warehouse for squatters`,
+  title: `Beautiful & luxurious studio at great location`,
   features: {
-    type: `Warehouse`,
-    bedrooms: 10,
-    maxGuests: 20,
+    type: `Apartment`,
+    bedrooms: 3,
+    maxGuests: 4,
   },
   description: [
     `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
     `An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
   ],
-  price: 50,
-  rating: 20,
+  price: 130,
+  rating: 55,
   photos: [
     `img/room.jpg`,
     `img/apartment-01.jpg`,
@@ -111,25 +111,25 @@ export default [{
     `Cabel TV`,
     `Fridge`],
   host: {
-    name: `Pablo`,
+    name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
   }
 }, {
   id: `04`,
-  isPremium: false,
-  title: `Dark basement`,
+  isPremium: true,
+  title: `Beautiful & luxurious studio at great location`,
   features: {
-    type: `Basement`,
-    bedrooms: 2,
-    maxGuests: 3,
+    type: `Apartment`,
+    bedrooms: 3,
+    maxGuests: 4,
   },
   description: [
     `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
     `An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
   ],
-  price: 40,
-  rating: 33,
+  price: 130,
+  rating: 55,
   photos: [
     `img/room.jpg`,
     `img/apartment-01.jpg`,
@@ -150,8 +150,49 @@ export default [{
     `Cabel TV`,
     `Fridge`],
   host: {
-    name: `John Snow`,
+    name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
   }
 }];
+
+export const testOffer = {
+  id: `01`,
+  isPremium: true,
+  title: `Beautiful & luxurious studio at great location`,
+  features: {
+    type: `Apartment`,
+    bedrooms: 3,
+    maxGuests: 4,
+  },
+  description: [
+    `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.`,
+    `An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`
+  ],
+  price: 120,
+  rating: 96,
+  photos: [
+    `img/room.jpg`,
+    `img/apartment-01.jpg`,
+    `img/apartment-02.jpg`,
+    `img/apartment-03.jpg`,
+    `img/studio-01.jpg`,
+    `img/apartment-01.jpg`
+  ],
+  householdList: [
+    `Wi-Fi`,
+    `Washing machine`,
+    `Towels`,
+    `Heating`,
+    `Coffee machine`,
+    `Baby seat`,
+    `Kitchen`,
+    `Dishwasher`,
+    `Cabel TV`,
+    `Fridge`],
+  host: {
+    name: `Angelina`,
+    avatar: `img/avatar-angelina.jpg`,
+    isSuper: true
+  }
+};
