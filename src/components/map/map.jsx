@@ -17,7 +17,7 @@ export default class Map extends React.PureComponent {
       iconSize: [30, 30]
     });
 
-    this.map = L.map(this.mapRef.current, {
+    this.map = L.map(`map`, {
       center: city,
       zoom,
       zoomControl: false,

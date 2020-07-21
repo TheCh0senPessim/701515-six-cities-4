@@ -36,6 +36,11 @@ export const testOffers = [{
     name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
+  },
+  location: {
+    latitude: 52.3909553943508,
+    longitude: 4.85309666406198,
+    zoom: 8
   }
 }, {
   id: `02`,
@@ -75,6 +80,11 @@ export const testOffers = [{
     name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
+  },
+  location: {
+    latitude: 52.3909553943508,
+    longitude: 4.85309666406198,
+    zoom: 8
   }
 }, {
   id: `03`,
@@ -114,6 +124,11 @@ export const testOffers = [{
     name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
+  },
+  location: {
+    latitude: 52.369553943508,
+    longitude: 4.85309666406198,
+    zoom: 8
   }
 }, {
   id: `04`,
@@ -153,6 +168,11 @@ export const testOffers = [{
     name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
+  },
+  location: {
+    latitude: 52.3909553943508,
+    longitude: 4.929309666406198,
+    zoom: 8
   }
 }];
 
@@ -194,5 +214,10 @@ export const testOffer = {
     name: `Angelina`,
     avatar: `img/avatar-angelina.jpg`,
     isSuper: true
+  },
+  location: {
+    latitude: 52.3809553943508,
+    longitude: 4.939309666406198,
+    zoom: 8
   }
 };

@@ -1,12 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Main from './main.jsx';
+import Map from './map.jsx';
 import {testOffers} from '../../mocks/test-mocks.js';
-import {BrowserRouter} from "react-router-dom";
-
-const Settings = {
-  OFFERS_AMOUNT: 312
-};
 
 const createMapContainer = () => {
   const div = global.document.createElement(`div`);
@@ -14,15 +9,13 @@ const createMapContainer = () => {
   global.document.body.appendChild(div);
 };
 
-it(`Should Main render correctly`, () => {
+it(`Map is rendered correctly`, () => {
   createMapContainer();
   const tree = renderer
     .create(
-        <BrowserRouter>
-          <Main
-            offersAmount={Settings.OFFERS_AMOUNT} offers={testOffers} onCardTitleClick={() => {}}
-          />
-        </BrowserRouter>)
+        <Map
+          offers={testOffers}
+        />)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

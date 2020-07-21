@@ -9,10 +9,16 @@ Enzyme.configure({
   adapter: new Adapter()
 });
 
+const createMapContainer = () => {
+  const div = global.document.createElement(`div`);
+  div.setAttribute(`id`, `map`);
+  global.document.body.appendChild(div);
+};
+
 describe(`MainComponent`, () => {
   it(`Should card title be clicked`, () => {
     const onCardTitleClick = jest.fn();
-
+    createMapContainer();
     const main = mount(
         <BrowserRouter>
           <Main
