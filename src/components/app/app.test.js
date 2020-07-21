@@ -8,7 +8,14 @@ const Settings = {
   OFFERS_AMOUNT: 312
 };
 
+const createMapContainer = () => {
+  const div = global.document.createElement(`div`);
+  div.setAttribute(`id`, `map`);
+  global.document.body.appendChild(div);
+};
+
 it(`Render App`, () => {
+  createMapContainer();
   const tree = renderer
     .create(
         <BrowserRouter>
